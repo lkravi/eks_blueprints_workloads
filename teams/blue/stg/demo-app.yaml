@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: go-web-container
-        image: lkravi/eks_bp_demo
+        image: lkravi/eks_bp_demo:422f9946
         ports:
         - containerPort: 8000
 ---
