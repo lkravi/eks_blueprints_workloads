@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: go-web-deployment
-  namespace: dev
+  namespace: team-blue-dev
   labels:
     app: go-web
 spec:
@@ -19,17 +19,17 @@ spec:
       - name: go-web-container
         image: lkravi/eks_bp_demo:d8c465c6
         ports:
-        - containerPort: 8000
+        - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: go-web-service
-  namespace: dev
+  namespace: team-blue-dev
 spec:
   selector:
     app: go-web
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8000
+      targetPort: 8080
